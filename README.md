@@ -1,2 +1,2 @@
 # DeviceLib
-Library for devices
+Embedded System library for control of various devices.

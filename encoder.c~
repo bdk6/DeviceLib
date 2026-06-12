@@ -1,0 +1,38 @@
+//////////////////////////////////////////////////////////////////////////////
+/// @file encoder.c
+/// @copy Copyright 2023 William R Cooke
+/// @brief Implementation for reading a keypad.
+//////////////////////////////////////////////////////////////////////////////
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#include <stdint.h>
+#include "device_config.h"
+#include "systick.h"
+#include "gpio.h"
+#include "encoder.h"
+
+
+static uint8_t pins = { ENCODER_PINS };
+static const uint8_tNUMBER_ENCODERS_PINS = (sizeof(pins) / sizeof(pins[0]));
+static const uint8_t NUMBER_ENCODERS = NUMBER_ENCODER_PINS / 2;
+
+// Keep track of the current count and last time position changed.
+static int32_t counts[NUMBER_ENCODERS];
+static uint32_t last_change[NUMBER_ENCODERS];
+        
+void ENCODER_init(void)
+{
+        // stuff
+}
+        
+int32_t ENCODER_get_count(int idx);
+void ENCODER_set_count(int idx, int32_T count);
+
+
+
+#ifdef __cplusplus
+}
+#endif
